@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('sleep') {
       steps {
         sleep 10
+      }
+    }
+    stage('echo') {
+      steps {
+        echo 'hogehoge'
       }
     }
   }
