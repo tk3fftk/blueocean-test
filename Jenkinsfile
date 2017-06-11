@@ -7,7 +7,7 @@ pipeline {
       }
     }
     stage('echo') {
-      withNPM() {
+      withNPM(npmrcConfig:'') {
         steps {
           sh 'npm install'
           sh 'node -v'
