@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { docker 'node:8' }
   stages {
     stage('sleep') {
       steps {
@@ -8,7 +8,7 @@ pipeline {
     }
     stage('echo') {
       steps {
-        echo 'hogehoge'
+        echo '`node -v`'
       }
     }
   }
