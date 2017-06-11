@@ -1,14 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('sleep') {
+    stage('input') {
       steps {
-        sleep 10
-      }
-    }
-    stage('echo') {
-      steps {
-        echo 'hogehoge'
+        input 'Are you ready?'
+        echo 'hey'
       }
     }
   }
