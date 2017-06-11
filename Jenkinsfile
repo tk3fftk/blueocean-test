@@ -7,9 +7,11 @@ pipeline {
       }
     }
     stage('echo') {
-      steps {
-        sh 'npm install'
-        sh 'node -v'
+      withNPM() {
+        steps {
+          sh 'npm install'
+          sh 'node -v'
+        }
       }
     }
   }
