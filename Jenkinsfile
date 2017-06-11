@@ -1,14 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('sleep') {
-      steps {
-        sleep 10
-      }
-    }
     stage('echo') {
       steps {
         echo 'hogehoge'
+        script {
+            def browsers = ['chrome', 'firefox']
+            for (int i = 0; i < browsers.size(); ++i) {
+                echo "Testing the ${browsers[i]} browser"
+            }
+        }
       }
     }
   }
