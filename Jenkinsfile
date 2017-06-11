@@ -1,5 +1,5 @@
 pipeline {
-  agent { docker 'node:8' }
+  agent any
   stages {
     stage('sleep') {
       steps {
