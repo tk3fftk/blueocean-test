@@ -2,9 +2,9 @@ pipeline {
   node {
       stage('if-else') {
         if (env.BRANCH_NAME == 'master') {
-            echo 'It's master branch'
+            echo 'It is master branch'
         } else {
-            echo 'It's not master branch'
+            echo 'It is not master branch'
         }
       }
       stage('try-catch') {
@@ -13,7 +13,6 @@ pipeline {
         }
         catch (exc) {
             echo 'Something failed, I should sound the klaxons!'
-            throw
         }
       }
   }
