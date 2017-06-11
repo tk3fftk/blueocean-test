@@ -1,4 +1,4 @@
-pipeline {
+
   node {
       stage('if-else') {
         if (env.BRANCH_NAME == 'master') {
@@ -16,4 +16,4 @@ pipeline {
         }
       }
   }
-}
+
