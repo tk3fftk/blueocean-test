@@ -16,9 +16,9 @@ pipeline {
       steps {
         script {
           if (env.BRANCH_NAME == 'master') {
-              echo 'It's master branch'
+              echo 'It is master branch'
           } else {
-              echo 'It's not master branch'
+              echo 'It is not master branch'
           }
         }
       }
