@@ -1,14 +1,35 @@
 pipeline {
   agent any
   stages {
-    stage('sleep') {
+    stage('serial01') {
       steps {
-        sleep 10
+        echo 'Tokyo central city is'
       }
     }
-    stage('echo') {
+    stage('parallel') {
       steps {
-        echo 'hogehoge'
+        parallel(
+          "sleep": {
+            sleep 10
+          },
+          "echo01": {
+            echo 'paralell paralell'
+          },
+          "echo02": {
+            echo 'paralell paralell'
+          },
+          "echo03": {
+            echo 'paralell paralell'
+          },
+          "echo04": {
+            echo 'world'
+          }
+        )
+      }
+    }
+    stage('serial02') {
+      steps {
+        echo 'end'
       }
     }
   }
